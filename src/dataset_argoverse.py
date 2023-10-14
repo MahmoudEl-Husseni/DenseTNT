@@ -14,7 +14,7 @@ import numpy as np
 import torch
 from tqdm import tqdm
 
-import utils_cython
+# import utils_cython
 import utils
 from utils import get_name, get_file_name_int, get_angle, logging, rotate, round_value, get_pad_vector, get_dis, get_subdivide_polygons
 from utils import get_points_remove_repeated, get_one_subdivide_polygon, get_dis_point_2_polygons, larger, equal, assert_

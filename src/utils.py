@@ -23,7 +23,8 @@ from matplotlib.path import Path
 from matplotlib.pyplot import MultipleLocator
 from torch import Tensor
 
-import utils_cython, structs
+# import utils_cython
+import structs
 
 _False = False
 if _False:
@@ -264,10 +265,11 @@ class Args:
     inter_agent_types = None
 
 
-args: Args = None
+# args: Args = None
 
 logger = None
 
+  
 
 def init(args_: Args, logger_):
     global args, logger
@@ -373,6 +375,42 @@ def init(args_: Args, logger_):
 
     assert args.do_train or args.do_eval
 
+# =============================================================
+class args:
+
+  argoverse2 = True
+  core_num = 16
+  hidden_size=128
+  data_dir = ['/content/val']
+  debug = False
+  train_batch_size = 4
+  seed = 42
+  eval_batch_size = 4
+  distributed_training=False
+
+
+  reuse_temp_file = False
+  temp_file_dir = "/content/tmp"
+  cuda_visible_device_num=0
+  log_dir = "/content/logs"
+  learning_rate=1e-3
+  do_eval = False
+  hidden_size=128
+  num_train_epochs=100
+  core_num=16
+  use_centerline=True
+  out_dir = "/content/out"
+  add_prefix = 'p'
+
+
+  use_map = True
+  use_centerline = True
+  future_frame_num = 60
+  train_batch_size = 16
+  other_params = {}
+  do_train = True
+  do_test = False
+# =============================================================
 
 def add_eval_param(param):
     if param not in args.eval_params:
